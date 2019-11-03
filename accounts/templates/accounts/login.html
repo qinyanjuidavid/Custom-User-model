@@ -1,0 +1,28 @@
+{%extends 'accounts/base.html'%}
+{%load crispy_forms_tags%}
+{%block content%}
+<br>
+<center>
+<div class="col-sm-6">
+  <legend style=color:green>
+    Sign In
+  </legend>
+<hr>
+<form method="POST" action="">
+  <div class='col-sm-7'>
+    <center>
+{%csrf_token%}
+{{form|crispy}}
+<button class='btn btn-success'>Login</button>
+<br>
+<small>
+Don't Have An Account? <a href="{%url 'accounts:register'%}">Sign Up!</a>
+  </small>
+</center>
+</div>
+  </form>
+  <hr>
+
+  </div>
+  </center>
+{%endblock%}

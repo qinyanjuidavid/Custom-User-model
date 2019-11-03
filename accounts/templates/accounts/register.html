@@ -1,0 +1,32 @@
+{%extends 'accounts/base.html'%}
+{%load crispy_forms_tags%}
+{%block content%}
+<br>
+<div class="jumbotron">
+<div class='col-sm-7'>
+  <div class='card'>
+    <form method="POST" action="">
+      <center>
+      <legend style=color:maroon>
+        Join And Book Today.
+        </legend>
+        </center>
+      <hr>
+      <div class='col-sm-6'>
+      {%csrf_token%}
+    {{form|crispy}}
+    <center>
+    <button class='btn btn-success'>Register</button>
+    <br>
+    <small>
+      Already Have An account? <a href="{%url 'accounts:login'%}">Sign In!</a>
+      </small>
+</center>
+    </div>
+</form>
+<img src="{{obj.image.url}}" alt="image">
+<br>
+</div>
+</div>
+</div>
+{%endblock%}
